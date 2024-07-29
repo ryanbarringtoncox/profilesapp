@@ -12,6 +12,8 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
+import ProjectList from './ProjectList';
+
 /**
  * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
  */
@@ -43,7 +45,7 @@ export default function App() {
       width="70%"
       margin="0 auto"
     >
-      <Heading level={1}>My Profile</Heading>
+      <Heading level={1}>ACE v2 MVP</Heading>
 
       <Divider />
 
@@ -73,6 +75,20 @@ export default function App() {
         ))}
       </Grid>
       <Button onClick={signOut}>Sign Out</Button>
+      <Divider />
+
+      <Grid
+        margin="3rem 0"
+        autoFlow="column"
+        justifyContent="center"
+        gap="2rem"
+        alignContent="center"
+      >
+          <View>
+            <Heading level="3">Projects</Heading>
+            <ProjectList></ProjectList>
+          </View>
+      </Grid>
     </Flex>
   );
 }
